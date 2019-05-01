@@ -5,20 +5,38 @@ import ListItem from './list-item';
 
 const List = ({
   listItems,
+  containerStyles,
+  itemRenderer,
 }) => {
   const renderedListItems = listItems.map((item) => {
-    return <ListItem {...item} />
+    if (itemRenderer) {
+      return <itemRenderer {...item} />;
+    }
+
+    return <ListItem {...item} />;
   });
+  const containerStyle = {
+    height: '100%',
+    width: '200px',
+    ...containerStyles,
+  };
 
   return (
-    <ul>
+    <div style={containerStyle}>
       {renderedListItems}
-    </ul>
+    </div>
   );
 };
 
 List.propTypes = {
   listItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  containerStyles: PropTypes.object, // eslint-disable-line
+  itemRenderer: PropTypes.node,
+};
+
+List.defaultProps = {
+  containerStyles: {},
+  itemRenderer: null,
 };
 
 export default List;
