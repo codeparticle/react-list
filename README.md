@@ -31,14 +31,16 @@ export default SantasList;
 
 <h1>Props</h1>
 <h2>List</h2>
-|Prop|type|default|description|
-|----|----|-------|-----------|
+
+Prop | type | default | description
+---- | ---- | ------- | -----------
 |listItems|array|none|The list of items|
 |containerStyles|object|none|Inline styles for the container|
 |className|string|none|Class name for the container. If it exists it will disable the inline styles|
 |itemRenderer|React Element|none|Custom renderer to for the list items|
 
-<h2>ListItem</h2>
+<h2>ListItem (passed through listItems)</h2>
+
 |Prop|type|default|description|
 |----|----|-------|-----------|
 |title|array|none|The title of the list item|
