@@ -8,7 +8,7 @@ It can accept a custom renderer to replace the default rendered list item compon
 <code>npm install --save @codeparticle/react-list</code>
 
 <h1>Usage</h1>
-```
+```javascript
   import React from 'react';
   import List from '@codeparticle/react-list';
 
