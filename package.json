@@ -1,0 +1,24 @@
+{
+  "name": "@codeparticle/react-list",
+  "version": "1.0.0",
+  "description": "A generic list component for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeparticle/react-list.git"
+  },
+  "keywords": [
+    "react",
+    "list",
+    "codeparticle"
+  ],
+  "author": "Code Particle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeparticle/react-list/issues"
+  },
+  "homepage": "https://github.com/codeparticle/react-list#readme"
+}
