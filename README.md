@@ -29,6 +29,23 @@ const SantasList = () => {
 export default SantasList;
 ```
 
+<h1>Props</h1>
+<h2>List</h2>
+|Prop|type|default|description|
+|----|----|-------|-----------|
+|listItems|array|none|The list of items|
+|containerStyles|object|none|Inline styles for the container|
+|className|string|none|Class name for the container. If it exists it will disable the inline styles|
+|itemRenderer|React Element|none|Custom renderer to for the list items|
+
+<h2>ListItem</h2>
+|Prop|type|default|description|
+|----|----|-------|-----------|
+|title|array|none|The title of the list item|
+|description|object|none|The description of the list item|
+|className|string|none|Class name for the container. If it exists it will disable the inline styles|
+|onClick|function|none|onClick for the list item. It is passed the event and will change the cursor to 'pointer' if it exists.|
+
 <h1>License</h1>
 Copyright 2019 Code Particle Inc.
 
