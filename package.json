@@ -1,10 +1,11 @@
 {
   "name": "@codeparticle/react-list",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A generic list component for React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node_modules/.bin/eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,14 @@
   },
   "homepage": "https://github.com/codeparticle/react-list#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.6"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0"
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
   }
 }
