@@ -9,23 +9,23 @@ It can accept a custom renderer to replace the default rendered list item compon
 
 <h1>Usage</h1>
 ```javascript
-  import React from 'react';
-  import List from '@codeparticle/react-list';
+import React from 'react';
+import List from '@codeparticle/react-list';
 
-  const SantasList = () => {
-    const naughty = [{
-      title: 'Nick',
-      description: 'uses common bug for slack name',
-      onClick: () => {alert('police')}
-    }, {
-      title: 'Ashley',
-      description: 'spoiled Avengers Endgame'
-    }]
+const SantasList = () => {
+  const naughty = [{
+    title: 'Nick',
+    description: 'uses common bug for slack name',
+    onClick: () => {alert('police')}
+  }, {
+    title: 'Ashley',
+    description: 'spoiled Avengers Endgame'
+  }]
 
-    return <List listItems={naughty} style={{background: 'red'}} />
-  }
+  return <List listItems={naughty} style={{background: 'red'}} />
+}
 
-  export default SantasList;
+export default SantasList;
 ```
 
 <h1>License</h1>
