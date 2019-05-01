@@ -6,12 +6,15 @@ const ListItem = ({
   description,
   onClick,
   itemStyles,
+  className,
 }) => {
-  const itemStyle = {
-    padding: '10px',
-    cursor: onClick ? 'pointer' : 'default',
-    ...itemStyles,
-  };
+  const itemStyle = className
+    ? {}
+    : {
+      padding: '10px',
+      cursor: onClick ? 'pointer' : 'default',
+      ...itemStyles,
+    };
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
       onClick(e);
@@ -20,6 +23,7 @@ const ListItem = ({
 
   return (
     <div
+      className={className}
       style={itemStyle}
       onKeyDown={onKeyDown}
       onClick={onClick}
@@ -37,6 +41,7 @@ ListItem.propTypes = {
   description: PropTypes.string,
   onClick: PropTypes.func,
   itemStyles: PropTypes.object, // eslint-disable-line
+  className: PropTypes.string,
 };
 
 ListItem.defaultProps = {
@@ -44,6 +49,7 @@ ListItem.defaultProps = {
   description: '',
   onClick: null,
   itemStyles: {},
+  className: '',
 };
 
 export default ListItem;

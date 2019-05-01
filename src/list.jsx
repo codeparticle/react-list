@@ -7,6 +7,7 @@ const List = ({
   listItems,
   containerStyles,
   itemRenderer,
+  className,
 }) => {
   const renderedListItems = listItems.map((item) => {
     if (itemRenderer) {
@@ -15,14 +16,19 @@ const List = ({
 
     return <ListItem {...item} />;
   });
-  const containerStyle = {
-    height: '100%',
-    width: '200px',
-    ...containerStyles,
-  };
+  const containerStyle = className
+    ? {}
+    : {
+      height: '100%',
+      width: '200px',
+      ...containerStyles,
+    };
 
   return (
-    <div style={containerStyle}>
+    <div
+      style={containerStyle}
+      className={className}
+    >
       {renderedListItems}
     </div>
   );
@@ -32,11 +38,13 @@ List.propTypes = {
   listItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   containerStyles: PropTypes.object, // eslint-disable-line
   itemRenderer: PropTypes.node,
+  className: PropTypes.string,
 };
 
 List.defaultProps = {
   containerStyles: {},
   itemRenderer: null,
+  className: '',
 };
 
 export default List;
