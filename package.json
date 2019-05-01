@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/codeparticle/react-list/issues"
   },
-  "homepage": "https://github.com/codeparticle/react-list#readme"
+  "homepage": "https://github.com/codeparticle/react-list#readme",
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0"
+  }
 }
