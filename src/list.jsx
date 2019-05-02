@@ -13,10 +13,10 @@ const List = ({
 }) => {
   const renderedListItems = listItems.map((item) => {
     if (itemRenderer) {
-      return <itemRenderer {...item} />;
+      return <itemRenderer key={item.item} {...item} />;
     }
 
-    return <ListItem {...item} tag={Tag} />;
+    return <ListItem key={item.item} {...item} tag={Tag} />;
   });
   const containerStyle = className
     ? {}
