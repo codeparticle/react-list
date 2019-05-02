@@ -4,7 +4,7 @@
   "description": "A generic list component for React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./test",
     "lint": "eslint src/** --fix"
   },
   "repository": {
@@ -27,10 +27,23 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.7.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.7.1",
+    "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>setup/enzyme.js"
+    ]
   }
 }
