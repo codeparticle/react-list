@@ -9,24 +9,57 @@ It can accept a custom renderer to replace the default rendered list item compon
 
 <h1>Usage</h1>
 
+Basic Example
 ```javascript
 import React from 'react';
 import List from '@codeparticle/react-list';
 
-const SantasList = () => {
-  const naughty = [{
-    title: 'Nick',
-    description: 'uses common bug for slack name',
-    onClick: () => {alert('police')}
+const ToDoList = () => {
+  const todos = [{
+    item: 'Take dog for walk',
+    onClick: () => {alert('walking now')}
   }, {
-    title: 'Ashley',
-    description: 'spoiled Avengers Endgame'
+    item: 'Buy groceries',
   }]
 
-  return <List listItems={naughty} style={{background: 'red'}} />
+  return <List listItems={todos} style={{background: 'green'}} />
 }
 
-export default SantasList;
+export default ToDoList;
+```
+
+Using itemRenderer for a custom item component
+
+```javascript
+import React from 'react';
+import List from '@codeparticle/react-list';
+
+const CustomItem = ({
+  name,
+  phoneNumber
+}) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{phoneNumber}</p>
+    </div>
+  );
+};
+
+const ContactList = () => {
+  const contacts = [{
+    name: 'Batman',
+    phoneNumber: '555-5555'
+  }, {
+    name: 'Superman',
+    phoneNumber: '666-6666'
+  }];
+
+  return <List listItems={contacts} itemRenderer={CustomItem} />
+};
+
+export default ContactList;
+
 ```
 
 <h1>Props</h1>
@@ -38,15 +71,17 @@ Prop | type | default | description
 |containerStyles|object|none|Inline styles for the container|
 |className|string|none|Class name for the container. If it exists it will disable the inline styles|
 |itemRenderer|React Element|none|Custom renderer to for the list items|
+|Tag|string|ul|tag for container ie ul, ol, dt|
+|title|string|none|optional header
 
 <h2>ListItem (passed through listItems)</h2>
 
 |Prop|type|default|description|
 |----|----|-------|-----------|
-|title|array|none|The title of the list item|
-|description|object|none|The description of the list item|
+|item|array|none|The content of the list item|
 |className|string|none|Class name for the container. If it exists it will disable the inline styles|
 |onClick|function|none|onClick for the list item. It is passed the event and will change the cursor to 'pointer' if it exists.|
+|itemStyles|object|none|inline styles for the list item
 
 <h1>License</h1>
 Copyright 2019 Code Particle Inc.

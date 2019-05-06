@@ -8,29 +8,32 @@ const List = ({
   containerStyles,
   itemRenderer,
   className,
+  title,
+  Tag,
 }) => {
   const renderedListItems = listItems.map((item) => {
     if (itemRenderer) {
       return <itemRenderer {...item} />;
     }
 
-    return <ListItem {...item} />;
+    return <ListItem {...item} tag={Tag} />;
   });
   const containerStyle = className
     ? {}
     : {
-      height: '100%',
-      width: '200px',
+      display: 'flex',
       ...containerStyles,
     };
+  const renderedTitle = title ? <h1>title</h1> : null;
 
   return (
-    <div
+    <Tag
       style={containerStyle}
       className={className}
     >
+      {renderedTitle}
       {renderedListItems}
-    </div>
+    </Tag>
   );
 };
 
@@ -39,12 +42,16 @@ List.propTypes = {
   containerStyles: PropTypes.object, // eslint-disable-line
   itemRenderer: PropTypes.node,
   className: PropTypes.string,
+  title: PropTypes.string,
+  Tag: PropTypes.string,
 };
 
 List.defaultProps = {
   containerStyles: {},
   itemRenderer: null,
   className: '',
+  title: '',
+  Tag: 'ul',
 };
 
 export default List;

@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ListItem = ({
-  title,
-  description,
+  item,
   onClick,
   itemStyles,
   className,
+  tag,
 }) => {
   const itemStyle = className
     ? {}
     : {
-      padding: '10px',
       cursor: onClick ? 'pointer' : 'default',
       ...itemStyles,
     };
@@ -20,9 +19,10 @@ const ListItem = ({
       onClick(e);
     }
   };
+  const Tag = tag === 'dt' ? 'dd' : 'li';
 
   return (
-    <div
+    <Tag
       className={className}
       style={itemStyle}
       onKeyDown={onKeyDown}
@@ -30,23 +30,21 @@ const ListItem = ({
       tabIndex={0}
       role="menuitem"
     >
-      <h1>{title}</h1>
-      <p>{description}</p>
-    </div>
+      {item}
+    </Tag>
   );
 };
 
 ListItem.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
+  tag: PropTypes.string.isRequired,
+  item: PropTypes.string,
   onClick: PropTypes.func,
   itemStyles: PropTypes.object, // eslint-disable-line
   className: PropTypes.string,
 };
 
 ListItem.defaultProps = {
-  title: '',
-  description: '',
+  item: '',
   onClick: null,
   itemStyles: {},
   className: '',
