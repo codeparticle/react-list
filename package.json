@@ -6,8 +6,10 @@
   "scripts": {
     "test": "jest ./test",
     "lint": "eslint src/** --fix",
-    "release": "standard-version",
-    "postrelease": "npm run release:github && npm run release:npm",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:postrelease": "npm run release:github && npm run release:npm",
     "release:github": "git push --no-verify --follow-tags origin master",
     "release:npm": "npm publish --access public"
   },
