@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import ListItem from './list-item';
 
-const List = ({
+function List({
   listItems,
   containerStyles,
   itemRenderer,
   className,
   title,
   Tag,
-}) => {
+}) {
   const renderedListItems = listItems.map((item) => {
     if (itemRenderer) {
       return <itemRenderer key={item.item} {...item} />;
@@ -35,12 +35,11 @@ const List = ({
       {renderedListItems}
     </Tag>
   );
-};
+}
 
 List.propTypes = {
   listItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   containerStyles: PropTypes.object, // eslint-disable-line
-  itemRenderer: PropTypes.node,
   className: PropTypes.string,
   title: PropTypes.string,
   Tag: PropTypes.string,
@@ -48,7 +47,6 @@ List.propTypes = {
 
 List.defaultProps = {
   containerStyles: {},
-  itemRenderer: null,
   className: '',
   title: '',
   Tag: 'ul',
