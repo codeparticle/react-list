@@ -6,6 +6,7 @@ import ListItem from '../src/list-item';
 describe('List item tests', () => {
   const defaultProps = {
     item: 'hello',
+    tag: 'li',
   };
   let wrapper = null;
 
@@ -22,7 +23,7 @@ describe('List item tests', () => {
   it('Should have the pointer cursor if onClick exists', () => {
     const newProps = {
       ...defaultProps,
-      onClick: () => {},
+      onClick: () => { },
     };
 
     wrapper = shallow(<ListItem {...newProps} />);
