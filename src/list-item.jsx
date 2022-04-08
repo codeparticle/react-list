@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListItem = ({
+function ListItem({
   item,
   onClick,
   itemStyles,
   className,
   tag,
-}) => {
+}) {
   const itemStyle = className
     ? {}
     : {
@@ -33,7 +33,7 @@ const ListItem = ({
       {item}
     </Tag>
   );
-};
+}
 
 ListItem.propTypes = {
   tag: PropTypes.string.isRequired,
