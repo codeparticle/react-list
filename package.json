@@ -1,6 +1,6 @@
 {
   "name": "@codeparticle/react-list",
-  "version": "25.0.0",
+  "version": "26.0.0",
   "description": "A generic list component for React",
   "main": "index.js",
   "scripts": {
